@@ -1,4 +1,3 @@
-from numpy import apply_over_axes
 import pygame
 import random
 
