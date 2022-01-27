@@ -8,6 +8,10 @@ def main():
     run=True
     zmienna=100
     zmienna2=100
+    #losowanie pozycji jabłka
+    appleX=random.randint(0,21)*20+10
+    appleY=random.randint(0,21)*20+10
+    
     while(run):
         OknoGry.fill((0,0,0))
         pygame.time.delay(100)
@@ -27,9 +31,10 @@ def main():
         r=pygame.Rect((zmienna2,zmienna),(20,20))
         pygame.draw.rect(OknoGry,(255,0,0),r)
         #tworzenie jablka za pomoca kola
-        appleX=random.randint(0,21)*20+10
-        appleY=random.randint(0,21)*20+10
         pygame.draw.circle(OknoGry,(128,0,0),(appleX,appleY),10)
+        #sprawdzenie czy waz zjada jablko
+        if ((zmienna+10==appleY) and (zmienna2+10==appleX)):
+            pygame.draw.circle(OknoGry,(128,128,128),(appleX,appleY),10)
         #zmienna=zmienna +20
         if zmienna>420:
             zmienna=0
