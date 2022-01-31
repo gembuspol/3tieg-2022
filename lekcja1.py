@@ -11,6 +11,11 @@ def main():
     #losowanie pozycji jabłka
     appleX=random.randint(0,21)*20+10
     appleY=random.randint(0,21)*20+10
+
+    #pozycje węża
+    pozycja=[(zmienna2,zmienna)]
+    pozycja.append((120,100))
+    dlugoszWeza=1
     
     while(run):
         OknoGry.fill((0,0,0))
@@ -27,13 +32,23 @@ def main():
                     zmienna=zmienna-20
                 elif zdarzenie.key==pygame.K_DOWN:
                     zmienna=zmienna +20
+            pozycja.append((zmienna2,zmienna))
+            if len(pozycja)>dlugoszWeza:
+                del pozycja[0]
         #tworzenie kwadratu jako weza
         r=pygame.Rect((zmienna2,zmienna),(20,20))
         pygame.draw.rect(OknoGry,(255,0,0),r)
+        #rysowanie węża z pozycji
+        for poz in pozycja[::-1]:
+            r=pygame.Rect((poz[0],poz[1]),(20,20))
+            pygame.draw.rect(OknoGry,(255,0,0),r)
         #tworzenie jablka za pomoca kola
         pygame.draw.circle(OknoGry,(128,0,0),(appleX,appleY),10)
         #sprawdzenie czy waz zjada jablko
         if (zmienna+10==appleY and zmienna2+10==appleX):
+            dlugoszWeza=dlugoszWeza+1
+            appleX=random.randint(0,21)*20+10
+            appleY=random.randint(0,21)*20+10
             pygame.draw.circle(OknoGry,(128,128,128),(appleX,appleY),10)
         #zmienna=zmienna +20
         if zmienna>420:
