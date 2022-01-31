@@ -33,7 +33,7 @@ def main():
         #tworzenie jablka za pomoca kola
         pygame.draw.circle(OknoGry,(128,0,0),(appleX,appleY),10)
         #sprawdzenie czy waz zjada jablko
-        if ((zmienna+10==appleY) and (zmienna2+10==appleX)):
+        if (zmienna+10==appleY and zmienna2+10==appleX):
             pygame.draw.circle(OknoGry,(128,128,128),(appleX,appleY),10)
         #zmienna=zmienna +20
         if zmienna>420:
