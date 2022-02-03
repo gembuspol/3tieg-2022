@@ -11,10 +11,11 @@ def main():
     #losowanie pozycji jabłka
     appleX=random.randint(0,21)*20+10
     appleY=random.randint(0,21)*20+10
-
+    #liczenie punktów
+    punkty=0
     #pozycje węża
     pozycja=[(zmienna2,zmienna)]
-    pozycja.append((120,100))
+    #pozycja.append((120,100))
     dlugoszWeza=1
     
     while(run):
@@ -32,9 +33,19 @@ def main():
                     zmienna=zmienna-20
                 elif zdarzenie.key==pygame.K_DOWN:
                     zmienna=zmienna +20
-            pozycja.append((zmienna2,zmienna))
-            if len(pozycja)>dlugoszWeza:
-                del pozycja[0]
+                #sprawdzenie czy waz nie zjada siebie
+                for location in pozycja[::]:
+                    if zmienna==location[1] and zmienna2==location[0]:
+                        pozycja=[(zmienna2,zmienna)]
+                        dlugoszWeza=1
+                        punkty=0
+                #dodanie nowej pozycji weza
+                pozycja.append((zmienna2,zmienna))
+                #usuniecie poprzedniej pozyci weza
+                #nie usuwamy pozycji gdy waz zjadl jablko
+                if len(pozycja)>dlugoszWeza:
+                    del pozycja[0]
+        
         #tworzenie kwadratu jako weza
         r=pygame.Rect((zmienna2,zmienna),(20,20))
         pygame.draw.rect(OknoGry,(255,0,0),r)
@@ -50,6 +61,12 @@ def main():
             appleX=random.randint(0,21)*20+10
             appleY=random.randint(0,21)*20+10
             pygame.draw.circle(OknoGry,(128,128,128),(appleX,appleY),10)
+            #zwiekszenie liczby punktow
+            punkty=punkty+1
+        #wypisanie punktow na ekran
+        czcionka=pygame.font.SysFont('comicsans',30)
+        tekst=czcionka.render("Zdobyłes punkty: {0}".format(punkty),1,(0,255,0))
+        OknoGry.blit(tekst, (10,10))
         #zmienna=zmienna +20
         if zmienna>420:
             zmienna=0
