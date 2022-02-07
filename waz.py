@@ -18,6 +18,14 @@ class Waz():
                     self.punkty=0
         #dodanie nowej pozycji weza
         self.__pozycja.append((x,y))
+         #nie usuwamy pozycji gdy waz zjadl jablko
+        if len(self.__pozycja)>self.dlugoscWeza:
+            del self.__pozycja[0]
+    #funkcja zjadania jablka
+    def zjadanie(self):
+        #self.dlugoscWeza=self.dlugoscWeza+1
+        self.dlugoscWeza+=1
+        self.punkty+=1
     #funkcja rysująca węża
     #jako parametry wywołania używa self - samej siebie oraz OknoGry- tam gdzie będziemy rysować węża
     def rysowanie(self, OknoGry):

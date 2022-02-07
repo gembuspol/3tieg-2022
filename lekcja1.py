@@ -62,7 +62,8 @@ def main():
         pygame.draw.circle(OknoGry,(128,0,0),(appleX,appleY),10)
         #sprawdzenie czy waz zjada jablko
         if (zmienna+10==appleY and zmienna2+10==appleX):
-            dlugoszWeza=dlugoszWeza+1
+            #dlugoszWeza=dlugoszWeza+1
+            obiektWaz.zjadanie()
             appleX=random.randint(0,21)*20+10
             appleY=random.randint(0,21)*20+10
             pygame.draw.circle(OknoGry,(128,128,128),(appleX,appleY),10)
