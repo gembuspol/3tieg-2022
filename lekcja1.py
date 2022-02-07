@@ -9,9 +9,9 @@ def main():
     run=True
 #wywołanie klasy waz
     obiektWaz=waz.Waz()
-
-    zmienna=obiektWaz.__pozycja[1]
-    zmienna2=obiektWaz.__pozycja[0]
+    poz=obiektWaz.getPosition()
+    zmienna=poz[1]
+    zmienna2=poz[0]
     #losowanie pozycji jabłka
     appleX=random.randint(0,21)*20+10
     appleY=random.randint(0,21)*20+10

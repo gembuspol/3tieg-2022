@@ -7,7 +7,8 @@ class Waz():
         self.__pozycja=[(100,100)]
         self.dlugoscWeza=1
         self.punkty=0
- 
+    def getPosition(self):
+        return self.__pozycja[0]
     def ruch(self,x,y):
          #sprawdzenie czy waz nie zjada siebie
         for location in self.__pozycja[::]:
