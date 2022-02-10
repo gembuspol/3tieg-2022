@@ -7,9 +7,16 @@ class Waz():
         self.__pozycja=[(100,100)]
         self.dlugoscWeza=1
         self.punkty=0
+        self.kierunek=(0,-1)
     def getPosition(self):
-        return self.__pozycja[0]
+        return self.__pozycja[-1]
+    def setPosition(self,x,y):
+        self.__pozycja[-1]=(x,y)
     def ruch(self,x,y):
+        #obliczenie nowej pozycji
+        ostatniaPozycja=self.__pozycja[-1]
+        x=ostatniaPozycja[0]+20*self.kierunek[0]
+        y=ostatniaPozycja[1]+20*self.kierunek[1]
          #sprawdzenie czy waz nie zjada siebie
         for location in self.__pozycja[::]:
             if x==location[0] and y==location[1]:
