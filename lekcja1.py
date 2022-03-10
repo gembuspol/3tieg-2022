@@ -65,6 +65,8 @@ def main():
             pozJablko=obiektApple.getPozycja()
             if (poz1[1]+10==pozJablko[1] and poz1[0]+10==pozJablko[0]):
                 obiektWaz1.zjadanie()
+                #wylosowanie nowej pozycji jablka
+                obiektApple.losujPozycje()
             if (poz2[1]+10==pozJablko[1] and poz2[0]+10==pozJablko[0]):
                 obiektWaz2.zjadanie()
             #wylosowanie nowej pozycji jablka
@@ -72,7 +74,9 @@ def main():
             #appleX=random.randint(0,21)*20+10
             #appleY=random.randint(0,21)*20+10
             #pygame.draw.circle(OknoGry,(128,128,128),(appleX,appleY),10)
-            
+        #zjadanie się wężów nawzajem
+        obiektWaz1.czyKtosMnieUgryzl(poz2) 
+        obiektWaz2.czyKtosMnieUgryzl(poz1)   
         #wypisanie punktow na ekran
         czcionka=pygame.font.SysFont('comicsans',20)
         tekst=czcionka.render("Punkty gracz 1: {0}".format(obiektWaz1.punkty),1,(0,255,0))
