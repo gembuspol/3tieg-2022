@@ -4,7 +4,7 @@ import waz
 import jablko
 
 #zmienne globalne
-
+rozdzielczosc=440
 obiektWaz1=waz.Waz()
 obiektWaz2=waz.Waz()
 def zmianaKolorWaz1(kolor):
@@ -16,7 +16,7 @@ def zmianaIlosciJablek(ilosc):
     iloscJablek=ilosc
 def main():
     pygame.init()
-    OknoGry=pygame.display.set_mode((440,440),0,32)
+    OknoGry=pygame.display.set_mode((rozdzielczosc,rozdzielczosc),0,32)
     pygame.display.set_caption("3tieg")
     run=True
     
@@ -102,29 +102,29 @@ def main():
         glowa2=obiektWaz2.getPosition()
         #sprawdzanie przejścia przez krawędź okna
         #prawa częśc okna
-        if glowa1[0]>420:
+        if glowa1[0]>rozdzielczosc-20:
             obiektWaz1.setPosition(0,glowa1[1])
         #lewa część okna
         if glowa1[0]<0:
-            obiektWaz1.setPosition(420,glowa1[1])
+            obiektWaz1.setPosition(rozdzielczosc-20,glowa1[1])
         #dół ekranu
-        if glowa1[1]>420:
+        if glowa1[1]>rozdzielczosc-20:
             obiektWaz1.setPosition(glowa1[0],0)
         #góra ekranu
         if glowa1[1]<0:
-            obiektWaz1.setPosition(glowa1[0],420)
+            obiektWaz1.setPosition(glowa1[0],rozdzielczosc-20)
         
-        if glowa2[0]>420:
+        if glowa2[0]>rozdzielczosc-20:
             obiektWaz2.setPosition(0,glowa2[1])
         #lewa część okna
         if glowa2[0]<0:
-            obiektWaz2.setPosition(420,glowa2[1])
+            obiektWaz2.setPosition(rozdzielczosc-20,glowa2[1])
         #dół ekranu
-        if glowa2[1]>420:
+        if glowa2[1]>rozdzielczosc-20:
             obiektWaz2.setPosition(glowa2[0],0)
         #góra ekranu
         if glowa2[1]<0:
-            obiektWaz2.setPosition(glowa2[0],420)
+            obiektWaz2.setPosition(glowa2[0],rozdzielczosc-20)
 
 
         pygame.display.update()
