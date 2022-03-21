@@ -1,4 +1,3 @@
-from matplotlib.widgets import Widget
 import pygame
 import pygame_menu
 import lekcja1
