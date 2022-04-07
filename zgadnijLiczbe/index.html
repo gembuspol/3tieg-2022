@@ -10,6 +10,11 @@
 </head>
 <body>
     <div class="container">
+        <label class="form-label">Określ zakres losowania liczby</label>
+        <input type="range" min="0" max="420" step="1" id="zakres" oninput="wyborLiczby()">
+        <output id="wybranaLiczba"></output>
+    </div>
+    <div class="container">
         <p>Podaj liczbę
         <input type="text" id="liczba"></p>
         <button type="button" class="btn btn-danger" onclick="sprawdzLiczbe()">Sprawdź liczbę</button> 
