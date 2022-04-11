@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <p>Podaj ilość znaków <input type="number" min="8" id="iloscZnakow" onclick="iloscZnakow()"></p>
+        <p>Podaj ilość znaków <input type="number" min="8" id="iloscZnakow" onchange="iloscZnakow()"></p>
         <p>Określ ilość cyfr 
             <input type="range" value="0" min="0" max="20" id="iloscCyfr" oninput="wybCyfr()">
             <output id="wybCyfr"></output>
@@ -19,6 +19,15 @@
             <input type="range" value="0" min="0" max="20" id="iloscMaleL" oninput="wybMaleL()">
             <output id="wybMaleL"></output>
         </p>
+        <p>Określ ilość dużych liter
+            <input type="range" value="0" min="0" max="20" id="iloscDuzeL" oninput="wybDuzeL()">
+            <output id="wybDuzeL"></output>
+        </p>
+        <p>Określ ilość znaków specjalnych
+            <input type="range" value="0" min="0" max="20" id="iloscSpec" oninput="wybSpec()">
+            <output id="wybSpec"></output>
+        </p>
+        Test <output id="wynik"></output>
     </div>
     <output id="test"></output>
     
