@@ -39,3 +39,13 @@ function ustawWolne(){
     document.getElementById("iloscDuzeL").max=+iloscDuzeL+ +iloscWolnychZn;
     document.getElementById("iloscSpec").max=+iloscSpec+ +iloscWolnychZn;
 }
+function generujHaslo(){
+    let haslo='';
+    const alfabetMale="abcdefghijhklmnoprstuvwxyz";
+
+    //losowanie malych liter
+    for(let i=0;i<iloscMaleL;i++){
+        haslo+=alfabetMale.charAt(Math.floor(Math.random()*alfabetMale.length));
+    }
+    document.getElementById("test").value=haslo;
+}
