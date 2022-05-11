@@ -20,6 +20,17 @@ function euklides2(liczbaA,liczbaB){
     }
     return liczbaA
 }
-function NWW(){
+function nww(){
+    let liczbaA=parseInt(document.getElementById("liczbaANWW").value)
+    let liczbaB=parseInt(document.getElementById("liczbaBNWW").value)
+    let x=liczbaA*liczbaB;
+    while(liczbaB!=0){
+        let c=liczbaA % liczbaB;
+        liczbaA=liczbaB;
+        liczbaB=c;
+    }
+    let NWD=liczbaA;
+    let wynik = x/NWD;
+    document.getElementById('nwwWynik').value=wynik;
     
 }
